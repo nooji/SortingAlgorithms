@@ -61,7 +61,7 @@ public class Test {
 		displayArray(RadixSort.radixLowRec(createTemp(array1), 1));
 		System.out.print("Shell Rec	: ");
 		displayArray(ShellSort.shellLowRec(createTemp(array1),1));
-		System.out.print("Original Again	: ");
+		System.out.print("Original 	: ");
 		displayArray(array1);
 
 	}
