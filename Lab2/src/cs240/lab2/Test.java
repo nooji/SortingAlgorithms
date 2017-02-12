@@ -28,6 +28,7 @@ public class Test {
 	}
 	
 	public static void main(String[] args){
+		@SuppressWarnings("resource")
 		Scanner keyboard = new Scanner(System.in);
 		
 		System.out.println("Enter Array Size");
@@ -41,7 +42,7 @@ public class Test {
 		System.out.print("Insert Iter	: ");
 		displayArray(InsertionSort.insertLow(createTemp(array1)));
 		System.out.print("Shell Iter	: ");
-		displayArray(ShellSort.sortLow(createTemp(array1)));
+		displayArray(ShellSort.shellLow(createTemp(array1)));
 		System.out.print("Merge Iter	: ");
 		displayArray(MergeSort.mergeLow(createTemp(array1)));
 		System.out.print("Quick Iter	: ");
@@ -59,7 +60,7 @@ public class Test {
 		System.out.print("Radix Rec	: ");
 		displayArray(RadixSort.radixLowRec(createTemp(array1), 1));
 		System.out.print("Shell Rec	: ");
-		displayArray(ShellSort.sortLowRec(createTemp(array1), 4,0));
+		displayArray(ShellSort.shellLowRec(createTemp(array1),1));
 		System.out.print("Original Again	: ");
 		displayArray(array1);
 

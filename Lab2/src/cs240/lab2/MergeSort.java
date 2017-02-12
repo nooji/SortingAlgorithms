@@ -33,33 +33,19 @@ public class MergeSort {
 	 }
 	 public static int[] mergeLowRec(int[] elts) {
 	        if(elts.length > 1) {
-	            // split the array into two pieces, as close to the same
-	            // size as possible.
 	            int[] first = extract(elts, 0, elts.length / 2);
 	            int[] last = extract(elts, elts.length / 2, elts.length);
-
-	            // sort each of the two halves recursively
 	            mergeLowRec(first);
 	            mergeLowRec(last);
-
-	            // merge the two sorted halves together
 	            merge(elts, first, last);
 	        }
 	        return elts;
 	    }
-
-	    // extract: returns a subarray of elts, starting with index
-	    // start in elts, continuing to (but not including) index
-	    // last.
 	    private static int[] extract(int[] elts, int start, int last) {
 	        int[] ret = new int[last - start];
 	        for(int i = 0; i < ret.length; i++) ret[i] = elts[start + i];
 	        return ret;
 	    }
-
-	    // merge: merges arrays a and b, placing the result into the
-	    // array dest. This only works if both a and b are already in
-	    // increasing order.
 	    private static void merge(int[] dest, int[] a, int[] b) {
 	        int i = 0;
 	        int j = 0;

@@ -1,13 +1,10 @@
 package cs240.lab2;
 
 public class ShellSort {
-	public static int[] sortLow(int[] tempArray) {
+	public static int[] shellLow(int[] tempArray) {
 	    int inner, outer;
 	    int temp;
 	    int interval = 1;
-	    while (interval<= tempArray.length / 3) {
-	    	interval=interval* 3 + 1;
-	    }
 	    while (interval > 0) {
 	      for (outer = interval; outer < tempArray.length; outer++) {
 	        temp = tempArray[outer];
@@ -19,18 +16,12 @@ public class ShellSort {
 	        }
 	        tempArray[inner] = temp;
 	      }
-	      interval= (interval - 1) / 3;
+	      interval= (2*interval)+1;
 	    }
 	    return tempArray;
 	  }
-	public static int[] sortLowRec(int[] array1, int interval, int increment) {
+	public static int[] shellLowRec(int[] array1, int interval) {
 		int inner, temp,outer;
-		if(increment==0){
-			while(interval <= array1.length/3){
-				interval = interval*3 +1;
-			}
-			increment++;
-		}
 		if(interval >0){
 			for(outer = interval;outer<array1.length;outer++){
 				temp = array1[outer];
@@ -41,8 +32,7 @@ public class ShellSort {
 				}
 				array1[inner]= temp;
 			}
-			sortLowRec(array1, (interval-1)/3,increment);
-			
+			shellLowRec(array1, (interval*2)+1);
 		}
 		return array1;
 	}   
