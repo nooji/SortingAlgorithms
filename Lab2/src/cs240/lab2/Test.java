@@ -16,7 +16,7 @@ public class Test {
 	public static void reshuffle(int[] array1){
 		Random rand = new Random();
 		for(int i= 0; i<array1.length; i++){
-			array1[i]= rand.nextInt(1000)+1;
+			array1[i]= rand.nextInt(1000);
 		}
 	}
 	public static int[] createTemp(int[] array1){
@@ -52,7 +52,7 @@ public class Test {
 		System.out.print("Selection Rec	: ");
 		displayArray(SelectionSort.selectLowRec(createTemp(array1), 0));
 		System.out.print("Insert Rec	: ");
-		displayArray(InsertionSort.insertLowRec(createTemp(array1), 1,0,-1));
+		displayArray(InsertionSort.insertLowRec(createTemp(array1), 1));
 		System.out.print("Merge Rec	: ");
 		displayArray(MergeSort.mergeLowRec(createTemp(array1)));
 		System.out.print("Quick Rec	: ");
